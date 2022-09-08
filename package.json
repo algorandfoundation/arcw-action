@@ -1,12 +1,12 @@
 {
-  "name": "eipw-action",
+  "name": "arcw-action",
   "version": "0.1.0",
-  "description": "A GitHub action to run eipw and display the results.",
-  "repository": "github:ethereum/eipw-action",
+  "description": "A GitHub action to run arcw and display the results.",
+  "repository": "github:algorandfoundation/arcw-action",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "build": "esbuild src/main.ts --bundle --platform=node --target=node16 --outfile=dist/index.js && shx cp node_modules/eipw-lint-js/eipw_lint_js_bg.wasm dist && echo { \"type\": \"commonjs\" } > dist/package.json",
+    "build": "esbuild src/main.ts --bundle --platform=node --target=node16 --outfile=dist/index.js && shx cp node_modules/arcw-lint-js/arcw_lint_js_bg.wasm dist && echo { \"type\": \"commonjs\" } > dist/package.json",
     "test": "prettier --check src/**/*.ts",
     "format": "prettier --write src/**/*.ts"
   },
@@ -17,7 +17,7 @@
     "@actions/github": "^5.0.3",
     "@octokit/plugin-throttling": "^4.1.0",
     "@octokit/webhooks-types": "^6.2.2",
-    "eipw-lint-js": "^0.1.6",
+    "arcw-lint-js": "^0.1.6",
     "tr46": "^3.0.0"
   },
   "devDependencies": {
