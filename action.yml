@@ -1,0 +1,17 @@
+name: 'arcw'
+description: 'Run arcw, the ARC validator, as a GitHub action'
+inputs:
+  token:
+    description: 'GitHub Secret Token'
+    required: true
+  unchecked:
+    description: 'ARC numbers (comma separated) that should not be linted'
+    required: false
+    default: ''
+  warning-only:
+    description: 'Replace all errors with warnings'
+    required: false
+    default: 'false'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
