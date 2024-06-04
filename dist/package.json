@@ -1,1 +1,1 @@
-{ type: commonjs }
+{ type: commonjs } # Compile TypeScript and create bundle.
