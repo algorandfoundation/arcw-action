@@ -16,9 +16,9 @@ jobs:
           fetch-depth: 0
 
       - name: Setup
-        uses: actions/setup-node@094c36e88e2a3ffdf4d3a5bb935088ac39a46acc
+        uses: actions/setup-node@main
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Install
         run: npm ci
