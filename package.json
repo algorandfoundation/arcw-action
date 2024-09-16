@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "build": "esbuild src/main.ts --bundle --platform=node --target=node20 --outfile=dist/index.js && shx cp node_modules/arcw-lint-js/arcw_lint_js_bg.wasm dist && echo { \"type\": \"commonjs\" } > dist/package.json",
+    "build": "esbuild src/main.ts --bundle --platform=node --target=node20 --outfile=dist/index.js && shx cp node_modules/arcw-lint-js/arcw_lint_js_bg.wasm dist && echo '{ \"type\": \"commonjs\" }' > dist/package.json",
     "test": "prettier --check src/**/*.ts",
     "format": "prettier --write src/**/*.ts"
   },
