@@ -293,7 +293,7 @@ ${val.stack}`;
       getInt32Memory0()[arg0 / 4 + 1] = len0;
       getInt32Memory0()[arg0 / 4 + 0] = ptr0;
     };
-    module2.exports.__wbg_readFile_1d89f57daa8ab0b8 = function() {
+    module2.exports.__wbg_readFile_cb1c451dad0231ea = function() {
       return handleError(function(arg0, arg1) {
         const ret = readFile(getObject(arg0), getObject(arg1));
         return addHeapObject(ret);
