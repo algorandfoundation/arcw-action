@@ -9371,25 +9371,27 @@ var import_github = __toESM(require_github(), 1);
 var import_utils = __toESM(require_utils4(), 1);
 var import_plugin_throttling = __toESM(require_dist_node11(), 1);
 async function main() {
+  var _a, _b, _c, _d;
   try {
     const ThrottledOctokit = import_utils.GitHub.plugin(import_plugin_throttling.throttling);
     const context = import_github.default.context;
     const githubToken = import_core.default.getInput("token");
     const throttle = {
       onRateLimit: (retryAfter, options) => {
-        const method = options?.method || "<unknown>";
-        const url = options?.url || "<unknown>";
+        var _a2;
+        const method = (options == null ? void 0 : options.method) || "<unknown>";
+        const url = (options == null ? void 0 : options.url) || "<unknown>";
         octokit.log.warn(
           `Request quota exhausted for request ${method} ${url}`
         );
-        if (options?.request?.retryCount <= 2) {
+        if (((_a2 = options == null ? void 0 : options.request) == null ? void 0 : _a2.retryCount) <= 2) {
           console.log(`Retrying after ${retryAfter} seconds!`);
           return true;
         }
       },
       onSecondaryRateLimit: (_retryAfter, options) => {
-        const method = options?.method || "<unknown>";
-        const url = options?.url || "<unknown>";
+        const method = (options == null ? void 0 : options.method) || "<unknown>";
+        const url = (options == null ? void 0 : options.url) || "<unknown>";
         octokit.log.warn(`Abuse detected for request ${method} ${url}`);
       }
     };
@@ -9444,24 +9446,24 @@ async function main() {
       let formatted;
       try {
         formatted = arcw.format(snippet);
-      } catch {
-        formatted = snippet.title?.label;
+      } catch (e) {
+        formatted = (_a = snippet.title) == null ? void 0 : _a.label;
         if (!formatted) {
           formatted = "<failed to render diagnostic, this is a bug in arcw>";
         }
       }
       let lineNumber = null;
       let file = null;
-      if (snippet.slices?.length > 0) {
+      if (((_b = snippet.slices) == null ? void 0 : _b.length) > 0) {
         lineNumber = snippet.slices[0].line_start;
         file = snippet.slices[0].origin;
       }
       const properties = {
-        title: snippet.title?.label,
+        title: (_c = snippet.title) == null ? void 0 : _c.label,
         startLine: lineNumber,
         file
       };
-      switch (snippet.title?.annotation_type) {
+      switch ((_d = snippet.title) == null ? void 0 : _d.annotation_type) {
         case "Help":
         case "Note":
         case "Info":
