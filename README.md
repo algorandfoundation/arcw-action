@@ -18,7 +18,7 @@ jobs:
     name: Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.0.2
+      - uses: actions/checkout@v4
       - uses: algorandfoundation/arcw-action@dist
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
